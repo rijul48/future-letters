@@ -1,0 +1,26 @@
+name = "future-letters"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# One Worker serves the page (public/) and the API (/api/*).
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+# Checks for due letters every hour.
+[triggers]
+crons = ["0 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "future-letters"
+database_id = "REPLACE_WITH_ID_FROM_STEP_3"
+
+[vars]
+# Must be an address on a domain verified in Resend.
+FROM_EMAIL = "Letters to the Future <letters@example.com>"
+# Your public address, no trailing slash. Used in the links inside emails.
+SITE_URL = "https://future-letters.example.workers.dev"
+# Safety cap: new letters accepted per rolling 24 hours.
+MAX_NEW_PER_DAY = "200"

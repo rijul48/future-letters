@@ -1,0 +1,4 @@
+# Copy this file to .dev.vars for local testing. Never commit .dev.vars.
+RESEND_API_KEY=re_xxxxxxxxxxxx
+ENCRYPTION_KEY=put-a-32-byte-base64-key-here
+DRY_RUN=true

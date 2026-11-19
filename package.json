@@ -1,0 +1,16 @@
+{
+  "name": "future-letters",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Write a letter today. It is emailed to you on the date you choose.",
+  "scripts": {
+    "test": "node --test --no-warnings test/*.test.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "genkey": "node -e \"console.log(require('node:crypto').randomBytes(32).toString('base64'))\""
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
